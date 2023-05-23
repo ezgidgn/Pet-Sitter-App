@@ -31,7 +31,7 @@ const LoginScreen:FC <LoginScreenProps>= ({navigation})=> {
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response);
       alert("Check your emails!");
-      navigation.navigate('Home');
+      navigation.navigate('HomePage');
      
     } catch (error: any) {
       console.log(error);

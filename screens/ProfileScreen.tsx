@@ -1,10 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import UserCard from '../src/components/UserCard/UserCard';
+import UserInfoCard from '../src/components/InfoCards/UserInfoCard';
+import PetInfoCard from '../src/components/InfoCards/PetInfoCard';
 
 export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <Text>ProfileScreen</Text>
+      <UserCard />
+      <UserInfoCard />
+      <PetInfoCard />
     </View>
   )
 }

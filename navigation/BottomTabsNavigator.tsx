@@ -11,23 +11,20 @@ import LoginScreen from "../screens/LoginScreen";
 const Tab = createBottomTabNavigator();
 
 const BottomTabsNavigator: FC = () => {
-  const [user, setUser] = useState<User | null>(null);
+  /* const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     onAuthStateChanged(FIREBASE_AUTH, (user) => {
       console.log("user", user);
       setUser(user);
     });
-  }, []);
+  }, []); */
 
   return (
-    <Tab.Navigator initialRouteName="HomePage" >
-      
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
-      
-        <Tab.Screen name="Message" component={MessageScreen} />
-    
+    <Tab.Navigator>
+        <Tab.Screen name="HomePage" component={HomeScreen} />
+        <Tab.Screen name="MessagePage" component={MessageScreen} />
+        <Tab.Screen name="ProfilePage" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };
