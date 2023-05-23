@@ -2191,10 +2191,13 @@
   dependencies:
     "plist" "^3.0.5"
 
-"@react-native-google-signin/google-signin@^9.0.2":
-  "integrity" "sha512-oTD0ZT6ZSH7CZjM1i6hR/gFAXv9As7nxhN99XGliNxf6SChZcQRwGeaz1DjoYrWExWDVX00EH1Per3dMjhAWkQ=="
-  "resolved" "https://registry.npmjs.org/@react-native-google-signin/google-signin/-/google-signin-9.0.2.tgz"
-  "version" "9.0.2"
+"@react-native-material/core@^1.3.7":
+  "integrity" "sha512-N5d/zKrmL3+fVyWsc/jFRxsDl59N5t3tYx9RlxhV04tQlcFKo9UlyBqCWDZFlxrkLrq3JY5zTRCMJAM3yvOz5w=="
+  "resolved" "https://registry.npmjs.org/@react-native-material/core/-/core-1.3.7.tgz"
+  "version" "1.3.7"
+  dependencies:
+    "chroma-js" "^2.4.2"
+    "react-native-flex-layout" "^0.1.5"
 
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
@@ -3075,6 +3078,11 @@
   "resolved" "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz"
   "version" "2.0.0"
 
+"chroma-js@^2.4.2":
+  "integrity" "sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A=="
+  "resolved" "https://registry.npmjs.org/chroma-js/-/chroma-js-2.4.2.tgz"
+  "version" "2.4.2"
+
 "ci-info@^2.0.0":
   "integrity" "sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ=="
   "resolved" "https://registry.npmjs.org/ci-info/-/ci-info-2.0.0.tgz"
@@ -3821,7 +3829,7 @@
   "resolved" "https://registry.npmjs.org/expo-updates-interface/-/expo-updates-interface-0.9.1.tgz"
   "version" "0.9.1"
 
-"expo@*", "expo@>=47.0.0", "expo@~48.0.15":
+"expo@*", "expo@>=47.0.0", "expo@~48.0.16":
   "integrity" "sha512-5T1CsMUlfI+xFB89GOU+/xtSSbSBBFVTqwgheAU0cQolfbs+YyJCMTKU5vN45N5OK+ym7p/LKPa6DQAxYPF8YQ=="
   "resolved" "https://registry.npmjs.org/expo/-/expo-48.0.17.tgz"
   "version" "48.0.17"
@@ -6307,6 +6315,11 @@
     "flow-parser" "^0.185.0"
     "jscodeshift" "^0.13.1"
     "nullthrows" "^1.1.1"
+
+"react-native-flex-layout@^0.1.5":
+  "integrity" "sha512-DrLir5Wl0RhgJXHeDBSaa1Y1LdpNuoz0PEe5E1T1+xVWt2DAz/r+1N8bnhtVkTKJE6WrH6jIH2hoe8kogR0X+w=="
+  "resolved" "https://registry.npmjs.org/react-native-flex-layout/-/react-native-flex-layout-0.1.5.tgz"
+  "version" "0.1.5"
 
 "react-native-gesture-handler@>= 1.0.0", "react-native-gesture-handler@~2.9.0":
   "integrity" "sha512-a0BcH3Qb1tgVqUutc6d3VuWQkI1AM3+fJx8dkxzZs9t06qA27QgURYFoklpabuWpsUTzuKRpxleykp25E8m7tg=="

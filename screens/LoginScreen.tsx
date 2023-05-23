@@ -14,24 +14,28 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { initializeApp } from "firebase/app";
 
 const Stack = createStackNavigator();
 
-interface LoginScreenProps {
-  navigation: any;
+export type BottomTabParams={
+  navigate(arg0: string): unknown;
+  HomePage: any;
+  ProfilePage: any;
+  MessagePage: any;
 }
 
-const LoginScreen:FC <LoginScreenProps>= ({navigation})=> {
+const LoginScreen:FC = ()=> {
+  const navigation =useNavigation <BottomTabParams>();
   const signIn = async () => {
     setLoading(true);
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response);
       alert("Check your emails!");
-      navigation.navigate('Home');
+     navigation.navigate('HomePage');
      
     } catch (error: any) {
       console.log(error);

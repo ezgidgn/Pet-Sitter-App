@@ -2,32 +2,38 @@ import { View, Text } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { User, onAuthStateChanged } from "firebase/auth";
 import { FIREBASE_AUTH } from "../src/config/firebase";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomTabBarButtonProps, BottomTabBarProps, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import MessageScreen from "../screens/MessageScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import LoginScreen from "../screens/LoginScreen";
+import LoginScreen, { BottomTabParams } from "../screens/LoginScreen";
+import { createStackNavigator } from "@react-navigation/stack";
+import {NavigationContainer, useNavigation} from "@react-navigation/native";
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<BottomTabParams>();
+const Stack = createStackNavigator();
 
 const BottomTabsNavigator: FC = () => {
-  const [user, setUser] = useState<User | null>(null);
-
-  useEffect(() => {
-    onAuthStateChanged(FIREBASE_AUTH, (user) => {
-      console.log("user", user);
-      setUser(user);
-    });
+const navigation =useNavigation <BottomTabParams>();
+  
+/*  useEffect(() => {
+    const isLoggedIn=false;
+    if (!isLoggedIn) {
+navigation.navigate('HomePage')
+    }
+   
   }, []);
+  */
+
+
+
+
 
   return (
     <Tab.Navigator initialRouteName="HomePage" >
-      
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
-      
-        <Tab.Screen name="Message" component={MessageScreen} />
-    
+       <Tab.Screen name="HomePage" component={HomeScreen} />
+       <Tab.Screen name="ProfilePage" component={ProfileScreen} />
+       <Tab.Screen name="MessagePage" component={MessageScreen} />
     </Tab.Navigator>
   );
 };

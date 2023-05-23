@@ -5,15 +5,23 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import BottomTabsNavigator from './navigation/BottomTabsNavigator';
+import ProfileScreen from './screens/ProfileScreen';
+import MessageScreen from './screens/MessageScreen';
 
 
-
+const Stack = createStackNavigator();
 export default function App() {
 
-  const Stack = createStackNavigator();
+
   return (
     <NavigationContainer>
-        <BottomTabsNavigator/>
+        <Stack.Navigator>
+          <Stack.Screen name="LoginPage" component={LoginScreen} options={{ headerShown: false }} />  
+          <Stack.Screen name="ProfilePage" component={ProfileScreen} />  
+          <Stack.Screen name="MessagePage" component={MessageScreen} options={{ headerShown: false }} />  
+          <Stack.Screen name="HomePage" component={BottomTabsNavigator} options={{ headerShown: false }} />  
+        </Stack.Navigator>
+        
     </NavigationContainer>
   );
 }
