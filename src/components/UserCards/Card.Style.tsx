@@ -23,11 +23,12 @@ const styles = StyleSheet.create({
     },
     textView: {
         marginLeft: horizontalScale(10),
-        marginTop: horizontalScale(15)
+        marginTop: horizontalScale(15),
     },
     text: {
         color: Colors.white,
         fontSize: moderateScale(17),
+        fontFamily: "Inter_400Regular",
     },
 });
 

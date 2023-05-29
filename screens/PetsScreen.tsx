@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, View, Text, FlatList, StyleSheet, Dimensions} from "react-native";
-import PetsCard from "../src/components/Card/PetsCard";
+import PetsCard from "../src/components/UserCards/PetsCard";
 import { moderateScale, verticalScale } from "../style/Metrics";
 import SearchBar from "../src/components/SearchBar/SearchBar";
 

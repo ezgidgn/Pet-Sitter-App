@@ -1,8 +1,9 @@
 import React from "react";
 import { SafeAreaView, View, Text, FlatList, StyleSheet } from "react-native";
-import SittersCard from "../src/components/Card/SittersCard";
+import SittersCard from "../src/components/UserCards/SittersCard";
 import { moderateScale } from "../style/Metrics";
 import SearchBar from "../src/components/SearchBar/SearchBar";
+
 
 // FAKE DATA TANIMI
 type SitterData = {
@@ -80,7 +81,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize: moderateScale(17),
         marginLeft: moderateScale(30),
-        marginTop: moderateScale(20)
+        marginTop: moderateScale(20),
+        fontFamily: "Inter_500Medium",
     }
 });
 
