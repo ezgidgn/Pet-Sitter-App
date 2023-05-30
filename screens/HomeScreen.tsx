@@ -1,22 +1,32 @@
-import { SafeAreaView, Text, StyleSheet, View } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native'
 import React from 'react'
 import SearchBar from '../src/components/SearchBar/SearchBar'
-import NavigatePetsButton from '../src/components/NavigateButtons/NavigatePetsButton'
-import NavigateSittersButton from '../src/components/NavigateButtons/NavigateSittersButton'
+import NewsACard from './StaticPages/NewsCard/NewsACard'
+import NewsBCard from './StaticPages/NewsCard/NewsBCard'
+import NewsCCard from './StaticPages/NewsCard/NewsCCard'
+import NewsDCard from './StaticPages/NewsCard/NewsDCard'
+import NewsECard from './StaticPages/NewsCard/NewsECard'
+import { verticalScale } from '../style/Metrics'
 
 
 const HomeScreen = ({navigation}: any) => {
   return (
     <SafeAreaView >
       <SearchBar />
-       <View>
-          <NavigatePetsButton />
-          <NavigateSittersButton />
-       </View>
-        
-      </SafeAreaView>
+       <View style={styles.page}>
+        <ScrollView style={{marginTop: verticalScale(20)}}>
+        <NewsACard />
+          <NewsBCard />
+          <NewsCCard />
+          <NewsDCard />
+          <NewsECard />
+        </ScrollView>
+        </View>
+    </SafeAreaView>
   );
 }
  
-
+const styles = StyleSheet.create({
+  page:{},
+})
 export default HomeScreen;
