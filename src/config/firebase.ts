@@ -16,12 +16,12 @@ const firebaseConfig = {
   storageBucket: "pet-sitter-72b05.appspot.com",
   messagingSenderId: "1088127886165",
   appId: "1:1088127886165:web:f5b4bd8cf5169aae56c5dc",
-  measurementId: "G-L7LRK0WDJL"
+  measurementId: "G-L7LRK0WDJL",
 };
 
 // Initialize Firebase
 export const FIREBASE_APP = initializeApp(firebaseConfig);
 export const FIREBASE_AUTH= getAuth(FIREBASE_APP);
-export const FIRESTORE_DB = getFirestore(FIREBASE_APP);
+export const db = getFirestore(FIREBASE_APP);
 
 export const FIREBASE_ANALYTICS = getAnalytics(FIREBASE_APP);   

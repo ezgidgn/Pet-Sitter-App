@@ -8,35 +8,37 @@ import {
   ActivityIndicator,
 } from "react-native";
 import React, { useState, FC } from "react";
-import { FIREBASE_AUTH } from "../src/config/firebase";
+import { FIREBASE_AUTH } from "../../src/config/firebase";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { initializeApp } from "firebase/app";
+import NavigationConstants from "../../navigation/NavigationConstants";
+import BottomTabsNavigator from "../../navigation/BottomTabsNavigator";
+import SignUpNextScreen from "./SignUpNextScreen";
 
 const Stack = createStackNavigator();
 
-export type BottomTabParams={
-  navigate(arg0: string): unknown;
+export type BottomTabParams = {
+  // navigate(arg0: string): unknown;
   HomePage: any;
   ProfilePage: any;
   MessagePage: any;
-}
+};
 
-const LoginScreen:FC = ()=> {
-  const navigation =useNavigation <BottomTabParams>();
+const LoginScreen: FC = () => {
+  const navigation = useNavigation<any>();
   const signIn = async () => {
-    setLoading(true);
+    setLoading(false);
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response);
       alert("Check your emails!");
-     navigation.navigate('HomePage');
-     
+      navigation.navigate(NavigationConstants.home);
     } catch (error: any) {
       console.log(error);
       alert("Sign in failed: " + error.message);
@@ -54,9 +56,13 @@ const LoginScreen:FC = ()=> {
       );
       console.log(response);
       alert("Check your emails!");
-    } catch (error: any) {
+      navigation.navigate(NavigationConstants.signUp)
+    } 
+    
+    
+    catch (error: any) {
       console.log(error);
-      alert("Sign in failed: " + error.message);
+      alert("Signup in failed: " + error.message);
     } finally {
       setLoading(false);
     }
@@ -86,21 +92,23 @@ const LoginScreen:FC = ()=> {
       </View>
 
       <View style={styles.buttonContainer}>
-        {loading ? (
+        
           <ActivityIndicator size="large" color="#BD90F1" />
-        ) : (
+        
           <>
             <TouchableOpacity onPress={signIn} style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={signUp}
+              
               style={[styles.button, styles.buttonOutline]}
             >
+              
               <Text style={styles.buttonOutlineText}>Register</Text>
             </TouchableOpacity>
           </>
-        )}
+        
       </View>
     </KeyboardAvoidingView>
   );
