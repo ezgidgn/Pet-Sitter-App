@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   SafeAreaView,
   View,
@@ -11,6 +11,19 @@ import {
 import { moderateScale, verticalScale } from "../../style/Metrics";
 import SearchBar from "../../src/components/SearchBar/SearchBar";
 import PetsCard from "../../src/components/UserCards/PetsCard";
+import { petSitter } from "../SittersPage/SittersScreen";
+import { db } from "../../src/config/firebase";
+import { addDoc, collection, onSnapshot, getDoc, doc} from "firebase/firestore";
+
+export interface pet{
+  id: String;
+  name: String;
+  age: number;
+  disaese: boolean;
+  description: String;
+  parent: petSitter;
+  location: String;
+}
 
 // FAKE DATA TANIMI
 type PetData = {
@@ -80,6 +93,28 @@ const DATA: PetData[] = [
 
 //EKRAN
 const PetsScreen = ({ navigation }: any) => {
+  const [pets, setPets ] = useState<any[]>([]);
+
+   
+  // FETCH SITTERS
+  useEffect(() => {
+   const petsRef = collection(db, 'pets');
+
+   const pet = onSnapshot(petsRef, {
+       next: (snapshot) => {
+           const pets: any[] = [];
+           snapshot.docs.forEach((doc) => {
+               console.log(doc.data());
+               pets.push({
+                   id: doc.id,
+                   ...doc.data(),
+               } as unknown as pet);
+           });
+           setPets(pets);
+       }
+   })
+  }, []) 
+
   const renderPet = ({ item }: any) => <PetsCard pet={item} />;
 
   return (
@@ -87,8 +122,8 @@ const PetsScreen = ({ navigation }: any) => {
       <SearchBar />
       <Text style={styles.title}>Sevimli dostlarımız bakıcı arıyor!</Text>
       <FlatList
-        keyExtractor={(item, index) => item.id.toString()}
-        data={DATA}
+        keyExtractor={(pet: pet) => pet.id.toString()}
+        data={pets}
         renderItem={renderPet}
         numColumns={1}
       />

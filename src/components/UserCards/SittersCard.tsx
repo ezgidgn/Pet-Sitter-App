@@ -11,7 +11,7 @@ const SittersCard = ({sitter} :any) => {
             <View style={styles.container}>
                 <View style={styles.imageContainer}></View>
                 <View style={styles.textView}>
-                    <Text style={styles.text}>{sitter.name}</Text> 
+                    <Text style={styles.text}>{sitter.name} {sitter.surname}</Text> 
                     <Text style={styles.text}>{sitter.age}</Text>
                     <Text style={styles.text}>{sitter.location}</Text>
                 </View>

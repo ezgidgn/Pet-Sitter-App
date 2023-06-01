@@ -1,12 +1,20 @@
 import React, {useState , useEffect} from "react";
-import { SafeAreaView, View, Text, FlatList, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, FlatList, StyleSheet, useAnimatedValue } from "react-native";
 import { moderateScale } from "../../style/Metrics";
 import SearchBar from "../../src/components/SearchBar/SearchBar";
 import SittersCard from "../../src/components/UserCards/SittersCard";
-import firestore from "@react-native-firebase/firestore";
+import { db } from "../../src/config/firebase";
+import { addDoc, collection, onSnapshot, getDoc, doc} from "firebase/firestore";
 
-
-
+export interface petSitter{
+    id: String;
+    age: number;
+    description: String;
+    job: String;
+    location: String;
+    name: String;
+    surname: string;
+}
 // FAKE DATA TANIMI
 type SitterData = {
     id: string;
@@ -62,16 +70,27 @@ const DATA: SitterData[] = [
 ];
 
 const SitterScreen = ({navigation}: any) => {
-    const [sitters, setSitters] = useState([]);
+   const [sitters, setSitters ] = useState<any[]>([]);
 
-    const fetchSitters = async () => {
-        const sittersCollection = await firestore().collection('sitters').get();
-        console.log(sittersCollection);
-    }
+   
+   // FETCH SITTERS
+   useEffect(() => {
+    const sitterRef = collection(db, 'sitters');
 
-    useEffect(() => {
-        fetchSitters();
-    }, [])
+    const sitter = onSnapshot(sitterRef, {
+        next: (snapshot) => {
+            const sitters: any[] = [];
+            snapshot.docs.forEach((doc) => {
+                console.log(doc.data());
+                sitters.push({
+                    id: doc.id,
+                    ...doc.data(),
+                } as unknown as petSitter);
+            });
+            setSitters(sitters);
+        }
+    })
+   }, []) 
 
     const renderSitter = ({item}: any) => <SittersCard sitter={item}/>;
 
@@ -80,8 +99,9 @@ const SitterScreen = ({navigation}: any) => {
             <SearchBar />
             <Text style={styles.title}>Sevimli dostunuz bakıcısı olabilirim</Text>
             <FlatList 
-            keyExtractor={(item, index)=> item.id.toString()}
-            data={DATA}
+            //keyExtractor={(item, index)=> item.id.toString()}
+            keyExtractor={(sitter: petSitter) => sitter.id.toString()}
+            data={sitters}
             renderItem={renderSitter}
             numColumns={1}
             />
