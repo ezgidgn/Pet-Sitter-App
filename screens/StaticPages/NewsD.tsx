@@ -1,11 +1,12 @@
 import React from "react";
-import {SafeAreaView, Text, Image, } from "react-native";
+import {SafeAreaView, Text, Image, ScrollView, } from "react-native";
 import BackButton from "../../src/components/BackButton/BackButton";
 import styles from "./News.style";
 
-const NewsD = () =>{
+const NewsD = ({navigation}: any) =>{
     return(
         <SafeAreaView style={styles.container}>
+            <ScrollView>
             <Text style={styles.header}>Evcil Tavşan Bakımı Hakkında Her Şey!</Text>
             <Image 
                 style={styles.image}
@@ -29,6 +30,7 @@ const NewsD = () =>{
                 
         
             <BackButton />
+            </ScrollView>
         </SafeAreaView>
     );
 }

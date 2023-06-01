@@ -1,11 +1,12 @@
 import React from "react";
-import {SafeAreaView, Text, Image, } from "react-native";
+import {SafeAreaView, Text, Image, ScrollView } from "react-native";
 import BackButton from "../../src/components/BackButton/BackButton";
 import styles from "./News.style";
 
-const NewsB = () =>{
+const NewsB = ({navigation}:any) =>{
     return(
         <SafeAreaView style={styles.container}>
+            <ScrollView>
             <Text style={styles.header}>Yavru Köpek Maması Seçimi</Text>
             <Image 
                 style={styles.image}
@@ -15,6 +16,7 @@ const NewsB = () =>{
                 Yavru köpek sağlığı, büyümesi ve gelişimi için doğru beslenme programına sahip olmak çok önemlidir. Her aşamada, ırk boyutlarına göre belirli miktarlarda belirli besin maddelerine ihtiyaç duyarlar. Bu nedenle, yavru köpeğinizin yaşına ve beklenen yetişkin boyutuna göre yüksek kaliteli yavru köpek maması seçmenizi öneririz.
             </Text>
             <BackButton />
+            </ScrollView>
         </SafeAreaView>
     );
 }

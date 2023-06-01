@@ -1,23 +1,29 @@
-import React from "react";
-import { TouchableOpacity, Image, Text,  } from "react-native";
-import styles from "./Card.style";
+import React from 'react';
+import { TouchableOpacity, Text, View , Image} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import styles from './Card.style';
 
-const NewsECard = ({navigation}: any) => {
+type RootStackParamList = {
+  NewsEScreen: undefined;
+};
 
-    function handlePage({page}:any){
-        navigation.navigate(page);
-    }
+const NewsECard: React.FC = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
-    return(
-        <TouchableOpacity style={styles.card} onPress={handlePage}>
-            <Image 
+  const handlePress = () => {
+    navigation.navigate("NewsEScreen");
+  };
+
+  return (
+    <TouchableOpacity style={styles.card} onPress={handlePress}>
+      <Image 
                 source={require('../../../assets/images/E.png')}
                 style={styles.image}
             />
             <Text style={styles.newsTitle}>A'dan Z'ye Muhabbet Kuşu Bakımı</Text>
-        </TouchableOpacity>
-    );
-}
-
+    </TouchableOpacity>
+  );
+};
 
 export default NewsECard;

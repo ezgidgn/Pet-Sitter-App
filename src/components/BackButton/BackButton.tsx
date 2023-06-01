@@ -2,8 +2,11 @@ import React from "react";
 import {TouchableOpacity, Text, StyleSheet} from "react-native";
 import Colors from "../../../style/Colors";
 import { horizontalScale, verticalScale } from "../../../style/Metrics";
+import { useNavigation } from "@react-navigation/native";
 
-const BackButton = ({navigation}:any) =>{
+const BackButton = () =>{
+
+    const navigation = useNavigation();
 
     function goBack(){
         navigation.goBack();
@@ -23,6 +26,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: horizontalScale(110),
         height: verticalScale(30),
+        alignSelf: "center",
+        marginVertical: 20,
     },
     title:{
         color: Colors.white,

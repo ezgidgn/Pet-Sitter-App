@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor: Colors.infoCardPurple,
         marginHorizontal: horizontalScale(20),
-        marginTop: verticalScale(20),
+        marginTop: verticalScale(10),
         borderRadius: 20,
     },
     title: {

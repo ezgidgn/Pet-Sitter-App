@@ -1,11 +1,12 @@
 import React from "react";
-import {SafeAreaView, Text, Image, } from "react-native";
+import {SafeAreaView, Text, Image, ScrollView, } from "react-native";
 import BackButton from "../../src/components/BackButton/BackButton";
 import styles from "./News.style";
 
-const NewsE = () =>{
+const NewsE = ({navigation}: any) =>{
     return(
         <SafeAreaView style={styles.container}>
+            <ScrollView>
             <Text style={styles.header}>A'dan Z'ye Muhabbet Kuşu Bakımı</Text>
             <Image 
                 style={styles.image}
@@ -25,6 +26,7 @@ const NewsE = () =>{
             <Text style={styles.title}>Oyun ve Egzersiz</Text>
             <Text style={styles.text}>Muhabbet kuşu bakımı ve eğitimi dostlarımızın konforlu yaşamı için oldukça önemlidir. Muhabbet kuşlarının zihinlerini meşgul etmeleri önemlidir. Sevimli dostlarımızın oldukça aktif canlılar olduğunu da unutmamak gerekir. Kafes içerisinde hareketlerini engellemeyecek, kanatlarını açtıklarında onlara zarar vermeyecek özel oyuncaklar olması çok önemlidir. Muhabbet kuşları ister tek başlarına yaşasınlar isterlerse çift olarak aynı kafesi paylaşsınlar oyun oynamaya ve egzersiz yapmaya ihtiyaç duyarlar. Bu nedenle onlar için keyifli oyuncakların olması önemlidir.</Text>
             <BackButton />
+            </ScrollView>
         </SafeAreaView>
     );
 }

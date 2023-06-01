@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
         height: verticalScale(30),
         width: horizontalScale(350),
         marginTop: verticalScale(30),
+        marginBottom: -15,
         backgroundColor: Colors.grey,
         borderRadius: moderateScale(30),
         alignItems: "baseline",

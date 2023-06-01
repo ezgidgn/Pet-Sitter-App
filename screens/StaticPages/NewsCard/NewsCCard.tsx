@@ -1,23 +1,29 @@
-import React from "react";
-import { TouchableOpacity, Image, Text,  } from "react-native";
-import styles from "./Card.style";
+import React from 'react';
+import { TouchableOpacity, Text, View , Image} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import styles from './Card.style';
 
-const NewsACard = ({navigation}: any) => {
+type RootStackParamList = {
+  NewsCScreen: undefined;
+};
 
-    function handlePage({page}:any){
-        navigation.navigate(page);
-    }
+const NewsCCard: React.FC = () => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
-    return(
-        <TouchableOpacity style={styles.card} onPress={handlePage}>
-            <Image 
+  const handlePress = () => {
+    navigation.navigate("NewsCScreen");
+  };
+
+  return (
+    <TouchableOpacity style={styles.card} onPress={handlePress}>
+      <Image 
                 source={require('../../../assets/images/C.png')}
                 style={styles.image}
             />
-            <Text style={styles.newsTitle}>Evcil Hayvan Bakımı Zor Mu?</Text>
-        </TouchableOpacity>
-    );
-}
+            <Text style={styles.newsTitle}>Kediler En Çok Nelerden Korkar?</Text>
+    </TouchableOpacity>
+  );
+};
 
-
-export default NewsACard;
+export default NewsCCard;

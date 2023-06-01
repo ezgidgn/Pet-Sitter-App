@@ -18,7 +18,7 @@ const ProfileCard = () => {
 const styles = StyleSheet.create({
     container:{
         //backgroundColor: Colors.infoCardPurple,
-        marginTop: verticalScale(50),
+        //marginTop: verticalScale(25),
         marginHorizontal: horizontalScale(30),
         flexDirection: "row",
         padding: 20
