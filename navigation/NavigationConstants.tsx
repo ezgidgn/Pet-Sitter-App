@@ -12,6 +12,7 @@ sittersNavigator:"SitterNavigator",
 sitters:"Sitters", 
 signUpNavigator:"SignUpNavigator",
 signUp:"SignUp",  
+signUpNext:"SignUpNext",
 
 
 

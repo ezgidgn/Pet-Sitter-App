@@ -6,9 +6,13 @@ import PetInfoCard from '../../src/components/InfoCards/PetInfoCard';
 import SwitchButton from '../../src/components/SwitchButton/SwitchButton';
 import CommunicationButton from '../../src/components/CommunicationButton/CommunicationButton';
 import { horizontalScale, verticalScale } from '../../style/Metrics';
+import { getAuth } from "firebase/auth";
 
 
 export default function ProfileScreen() {
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   return (
     <View style={styles.container}>
       <ProfileCard />

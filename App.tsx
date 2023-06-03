@@ -12,12 +12,16 @@ import SitterScreen from "./screens/SittersPage/SittersScreen";
 import MessagingScreen from "./screens/MessagesPage/MessagingScreen";
 import NavigationConstants from "./navigation/NavigationConstants";
 import SignUpNextScreen from "./screens/LoginPage/SignUpNextScreen";
+
 import {  useFonts, Inter_900Black,  Inter_400Regular,Inter_500Medium, Inter_600SemiBold,} from '@expo-google-fonts/inter';
 import NewsA from "./screens/StaticPages/NewsA";
 import NewsB from "./screens/StaticPages/NewsB";
 import NewsC from "./screens/StaticPages/NewsC";
 import NewsD from "./screens/StaticPages/NewsD";
 import NewsE from "./screens/StaticPages/NewsE";
+
+
+
 
 type RootStackParamList = {
   LoginPage: undefined;
@@ -53,7 +57,15 @@ export default function App () {
           }}
         />
          <Stack.Screen
-          name="SignUpNextPage"
+          name={NavigationConstants.signUp}
+          component={SignUpNextScreen}
+          options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+          }}
+        />
+         <Stack.Screen
+          name={NavigationConstants.signUpNext}
           component={SignUpNextScreen}
           options={{
             headerShown: false,
