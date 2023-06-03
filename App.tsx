@@ -12,6 +12,7 @@ import SitterScreen from "./screens/SittersPage/SittersScreen";
 import MessagingScreen from "./screens/MessagesPage/MessagingScreen";
 import NavigationConstants from "./navigation/NavigationConstants";
 import SignUpNextScreen from "./screens/LoginPage/SignUpNextScreen";
+import SignUpScreen from "./screens/LoginPage/SignUpScreen";
 
 type RootStackParamList = {
   LoginPage: undefined;
@@ -37,7 +38,15 @@ export default function App () {
           }}
         />
          <Stack.Screen
-          name="SignUpNextPage"
+          name={NavigationConstants.signUp}
+          component={SignUpScreen}
+          options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+          }}
+        />
+         <Stack.Screen
+          name={NavigationConstants.signUpNext}
           component={SignUpNextScreen}
           options={{
             headerShown: false,
