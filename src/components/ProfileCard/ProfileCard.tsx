@@ -6,13 +6,14 @@ import { getAuth } from "firebase/auth";
 const ProfileCard = () => {
     const auth = getAuth();
     const user = auth.currentUser;
+    
 
     
         return(
             <View style={styles.container}>
                 <View style={styles.image}></View>
                 <View style={styles.textContainer}>
-                    <Text style={styles.title}>Melike Kızılcık</Text>
+                    <Text style={styles.title}>{user?.email}</Text>
                     <Text style={styles.description}>İstanbul, Türkiye</Text>
                     <Text style={styles.description}>1 evcil hayvan</Text>
                 </View>

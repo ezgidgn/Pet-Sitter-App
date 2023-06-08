@@ -15,9 +15,6 @@ signUp:"SignUp",
 signUpNext:"SignUpNext",
 
 
-
-
-
 bottomTabsNavigator:"BottomTabsNavigator"
 
 

@@ -7,6 +7,7 @@ import SwitchButton from '../../src/components/SwitchButton/SwitchButton';
 import CommunicationButton from '../../src/components/CommunicationButton/CommunicationButton';
 import { horizontalScale, verticalScale } from '../../style/Metrics';
 import { getAuth } from "firebase/auth";
+import { addDoc, collection, onSnapshot, getDoc, doc} from "firebase/firestore";
 
 
 export default function ProfileScreen() {
