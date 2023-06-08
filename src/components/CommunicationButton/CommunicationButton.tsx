@@ -11,7 +11,7 @@ const CommunicationButton = () => {
 
     return(
         <TouchableOpacity style={styles.container} onPress={navigateMessagePage} >
-            <Text style={styles.title}>İletişime geç</Text>
+            <Text style={styles.title}>Randevu oluştur</Text>
         </TouchableOpacity>
     );
 }
