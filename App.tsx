@@ -6,20 +6,18 @@ import BottomTabsNavigator from "./navigation/BottomTabsNavigator";
 import LoginScreen from "./screens/LoginPage/LoginScreen";
 import NavigationConstants from "./navigation/NavigationConstants";
 import SignUpNextScreen from "./screens/LoginPage/SignUpNextScreen";
-
 import {  useFonts, Inter_900Black,  Inter_400Regular,Inter_500Medium, Inter_600SemiBold,} from '@expo-google-fonts/inter';
-
 import SignUpScreen from "./screens/LoginPage/SignUpScreen";
-
-
-
+import NewsA from "./screens/StaticPages/NewsA";
+import NewsB from "./screens/StaticPages/NewsB";
+import NewsC from "./screens/StaticPages/NewsC";
+import NewsD from "./screens/StaticPages/NewsD";
+import NewsE from "./screens/StaticPages/NewsE";
 
 type RootStackParamList = {
   LoginPage: undefined;
   Home: undefined;
 };
-
-
 
 const Stack = createStackNavigator();
 export default function App () {
@@ -74,6 +72,11 @@ export default function App () {
           
           }}
         />
+        <Stack.Screen name="NewsAScreen" component={NewsA}/>
+        <Stack.Screen name="NewsBScreen" component={NewsB}/>
+        <Stack.Screen name="NewsCScreen" component={NewsC}/>
+        <Stack.Screen name="NewsDScreen" component={NewsD}/>
+        <Stack.Screen name="NewsEScreen" component={NewsE}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

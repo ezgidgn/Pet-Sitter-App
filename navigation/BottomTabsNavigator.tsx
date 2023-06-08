@@ -8,13 +8,11 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomePage/HomeScreen";
-import MessageScreen from "../screens/MessagesPage/MessageScreen";
 import ProfileScreen from "../screens/ProfilePage/ProfileScreen";
 import LoginScreen, { BottomTabParams } from "../screens/LoginPage/LoginScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import NavigationConstants from "./NavigationConstants";
-import MessageNavigator from "./MessageNavigator";
 import ProfileNavigator from "./ProfileNavigator";
 import HomeNavigator from "./HomeNavigator";
 import PetsNavigator from "./PetsNavigator";
@@ -71,14 +69,7 @@ navigation.navigate("LoginPage")
             }}
           />
 
-          <Tab.Screen
-            name={NavigationConstants.messagesNavigator}
-            component={MessageNavigator}
-            options={{ headerShown: false, tabBarShowLabel: false,
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="mail-unread-outline" color={"#BD90F1"} size={size} />
-              ), }}
-          />
+          
           <Tab.Screen
             name={NavigationConstants.profileNavigator}
             component={ProfileNavigator}
