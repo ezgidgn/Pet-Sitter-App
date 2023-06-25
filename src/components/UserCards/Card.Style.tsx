@@ -3,7 +3,7 @@ import Colors from "../../../style/Colors";
 import {horizontalScale, verticalScale, moderateScale} from "../../../style/Metrics";
 
 const styles = StyleSheet.create({
-    container:{
+    sitterContainer:{
         backgroundColor: Colors.flatListPurple,
         height: verticalScale(100),
         width: horizontalScale(330),
@@ -25,11 +25,12 @@ const styles = StyleSheet.create({
         marginLeft: horizontalScale(10),
         marginTop: horizontalScale(15),
     },
-    text: {
+    sitterText: {
         color: Colors.white,
         fontSize: moderateScale(17),
         fontFamily: "Inter_400Regular",
     },
+    
 });
 
 export default styles;

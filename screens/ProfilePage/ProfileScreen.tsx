@@ -29,9 +29,7 @@ export default function ProfileScreen() {
           <SwitchButton />
         </View>
       </View>
-      <View style={styles.comButton}>
-        <CommunicationButton />
-      </View>
+      
     </View>
   )
 }
@@ -39,6 +37,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
     container:{
         flex: 1,
+        marginTop: 50,
     },
     switchContainer:{
       flexDirection: "column",

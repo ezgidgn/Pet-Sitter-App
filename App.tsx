@@ -13,6 +13,9 @@ import NewsB from "./screens/StaticPages/NewsB";
 import NewsC from "./screens/StaticPages/NewsC";
 import NewsD from "./screens/StaticPages/NewsD";
 import NewsE from "./screens/StaticPages/NewsE";
+import MeetingPage from "./screens/MeetingPage/MeetingPage";
+import ProfileC from "./screens/StaticProfiles/ProfileC";
+import ProfileD from "./screens/StaticProfiles/ProfileD";
 
 type RootStackParamList = {
   LoginPage: undefined;
@@ -72,11 +75,38 @@ export default function App () {
           
           }}
         />
-        <Stack.Screen name="NewsAScreen" component={NewsA}/>
-        <Stack.Screen name="NewsBScreen" component={NewsB}/>
-        <Stack.Screen name="NewsCScreen" component={NewsC}/>
-        <Stack.Screen name="NewsDScreen" component={NewsD}/>
-        <Stack.Screen name="NewsEScreen" component={NewsE}/>
+        <Stack.Screen name="NewsAScreen" component={NewsA} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
+        <Stack.Screen name="NewsBScreen" component={NewsB} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
+        <Stack.Screen name="NewsCScreen" component={NewsC} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
+        <Stack.Screen name="NewsDScreen" component={NewsD} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
+        <Stack.Screen name="NewsEScreen" component={NewsE} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
+        <Stack.Screen name="MeetingPage" component={MeetingPage} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
+        <Stack.Screen name="ProfileC" component={ProfileC} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
+        <Stack.Screen name="ProfileD" component={ProfileD} options={{
+            headerShown: false,
+            headerBackTitleVisible: false,
+            }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

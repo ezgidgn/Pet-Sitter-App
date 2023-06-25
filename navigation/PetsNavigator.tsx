@@ -12,7 +12,10 @@ const PetsNavigator = () => {
       <Stack.Screen
         name={NavigationConstants.pets}
         component={PetsScreen}
-        options={{headerBackTitleVisible:false}}
+        options={{
+          headerShown: false,
+          headerBackTitleVisible: false,
+        }}
       />
     </Stack.Navigator>
   )

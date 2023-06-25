@@ -2,15 +2,22 @@ import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import Colors from "../../../style/Colors";
 import { horizontalScale, verticalScale } from "../../../style/Metrics";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
-const CommunicationButton = () => {
+type RootStackParamList = {
+    MeetingPage: undefined;
+};
 
-    const navigateMessagePage = () =>{
-        
-    }
+
+const CommunicationButton : React.FC = ()  => {
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+    const handlePress = () => {
+      navigation.navigate("MeetingPage");
+    };
 
     return(
-        <TouchableOpacity style={styles.container} onPress={navigateMessagePage} >
+        <TouchableOpacity style={styles.container} onPress={handlePress} >
             <Text style={styles.title}>Randevu oluştur</Text>
         </TouchableOpacity>
     );

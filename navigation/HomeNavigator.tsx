@@ -9,7 +9,12 @@ const HomeNavigator = () => {
 
     return (
         <Stack.Navigator initialRouteName={NavigationConstants.home}>
-            <Stack.Screen name={NavigationConstants.home} component={HomeScreen}/>
+            <Stack.Screen name={NavigationConstants.home} component={HomeScreen}
+            options={{
+                headerShown: false,
+                headerBackTitleVisible: false,
+             }}
+            />
            
         </Stack.Navigator >
     )

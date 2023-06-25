@@ -14,7 +14,10 @@ const SittersNavigator = () => {
     <Stack.Screen
       name={NavigationConstants.sitters}
       component={SittersScreen}
-      options={{headerBackTitleVisible:false}}
+      options={{
+        headerShown: false,
+        headerBackTitleVisible: false,
+      }}
     />
   </Stack.Navigator>
   )

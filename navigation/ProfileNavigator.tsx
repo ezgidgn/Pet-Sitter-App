@@ -11,7 +11,12 @@ const ProfileNavigator: FC = () => {
       <Stack.Screen
         name={NavigationConstants.profile}
         component={ProfileScreen}
-        options={{headerBackTitleVisible:false}}
+        options={{
+          headerShown: false,
+          headerBackTitleVisible: false,
+       
+        
+        }}
       />
     </Stack.Navigator>
   );

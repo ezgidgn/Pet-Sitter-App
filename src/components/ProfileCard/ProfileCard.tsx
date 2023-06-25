@@ -1,26 +1,19 @@
-import {View, Text, Image, StyleSheet} from "react-native";
+import {View, Text, Image, StyleSheet,} from "react-native";
 import { horizontalScale, moderateScale, verticalScale } from "../../../style/Metrics";
 import Colors from "../../../style/Colors";
-import { getAuth } from "firebase/auth";
+
 
 const ProfileCard = () => {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    
-
-    
         return(
             <View style={styles.container}>
-                <View style={styles.image}></View>
+                <Image source={require("../../../assets/images/icon.png")} style={styles.image}/>
                 <View style={styles.textContainer}>
-                    <Text style={styles.title}>{user?.email}</Text>
+                    <Text style={styles.titleUser}>Melike Kızılcık</Text>
                     <Text style={styles.description}>İstanbul, Türkiye</Text>
                     <Text style={styles.description}>1 evcil hayvan</Text>
                 </View>
             </View>
         );
-    
-    
 }
 
 const styles = StyleSheet.create({
@@ -37,7 +30,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginTop: verticalScale(10),
     },
-    title: {
+    titleUser: {
         fontSize: moderateScale(18),
         fontFamily: "Inter_500Medium",
         marginBottom: 8

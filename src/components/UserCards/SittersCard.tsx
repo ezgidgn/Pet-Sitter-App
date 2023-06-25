@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity} from "react-native";
+import {View, Text, TouchableOpacity, Image} from "react-native";
 import styles from "./Card.Style";
 
 
@@ -8,12 +8,12 @@ const SittersCard = ({sitter} :any) => {
 
     return(
         <TouchableOpacity onPress={navigateSitterProfile}>
-            <View style={styles.container}>
-                <View style={styles.imageContainer}></View>
+            <View style={styles.sitterContainer}>
+            <Image source={require("../../../assets/images/icon.png")} style={styles.imageContainer}/>
                 <View style={styles.textView}>
-                    <Text style={styles.text}>{sitter.name} {sitter.surname}</Text> 
-                    <Text style={styles.text}>{sitter.age}</Text>
-                    <Text style={styles.text}>{sitter.location}</Text>
+                    <Text style={styles.sitterText}>{sitter.name} {sitter.surname}</Text> 
+                    <Text style={styles.sitterText}>{sitter.age}</Text>
+                    <Text style={styles.sitterText}>{sitter.location}</Text>
                 </View>
                 </View>
         </TouchableOpacity>
